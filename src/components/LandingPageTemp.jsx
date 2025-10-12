@@ -23,7 +23,7 @@ const LandingPage = () => {
                 <nav className="flex items-center justify-between mx-auto max-w-4xl mt-2 rounded-full bg-white/10 backdrop-blur-lg px-3 py-1 border border-white/20 shadow-lg hover:max-w-[54rem] transition-all duration-300">
                     <div className="flex items-center space-x-2 ">
                         <span className="text-xl font-bold bg-gradient-to-r from-red-400 via-orange-300 to-blue-600 bg-clip-text text-transparent">
-                            <img className='h-12' src="../../public/l1-removebg-preview.png" alt="secureflash" />
+                            <img className='h-12' src="https://i.ibb.co/Y7jLNpmp/l1-removebg-preview.png" alt="secureflash" />
                         </span>
                     </div>
                     <div className="flex items-center space-x-6 text-sm animate-fadein animate-duration-1000 animate-delay-500">
