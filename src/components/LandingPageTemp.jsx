@@ -20,17 +20,17 @@ const LandingPage = () => {
             {/* Main Content Container with Translucent Navigation and Hero Section */}
             <div className="relative z-10 p-4">
                 {/* Translucent Navigation Bar */}
-                <nav className="flex items-center justify-between mx-auto max-w-4xl mt-2 rounded-full bg-white/10 backdrop-blur-lg px-6 py-2 border border-white/20 shadow-lg hover:max-w-3xl transition-all duration-300">
+                <nav className="flex items-center justify-between mx-auto max-w-4xl mt-2 rounded-full bg-white/10 backdrop-blur-lg px-3 py-1 border border-white/20 shadow-lg hover:max-w-[54rem] transition-all duration-300">
                     <div className="flex items-center space-x-2 ">
                         <span className="text-xl font-bold bg-gradient-to-r from-red-400 via-orange-300 to-blue-600 bg-clip-text text-transparent">
                             <img className='h-12' src="../../public/l1-removebg-preview.png" alt="secureflash" />
                         </span>
                     </div>
                     <div className="flex items-center space-x-6 text-sm animate-fadein animate-duration-1000 animate-delay-500">
-                        <button onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })} className="font-semibold hover:text-gray-300 transition-colors">About</button>
-                        <button onClick={() => document.getElementById('faqs')?.scrollIntoView({ behavior: 'smooth' })} className="hover:text-gray-300 transition-colors">FAQs</button>
-                        <button onClick={() => document.getElementById('testimonials')?.scrollIntoView({ behavior: 'smooth' })} className="hover:text-gray-300 transition-colors">Testimonials</button>
-                        <button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} className="hover:text-gray-300 transition-colors">Contact</button>
+                        <button onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })} className="font-semibold hover:text-gray-300 transition-colors active:scale-95">About</button>
+                        <button onClick={() => document.getElementById('faqs')?.scrollIntoView({ behavior: 'smooth' })} className="hover:text-gray-300 transition-colors active:scale-95">FAQs</button>
+                        <button onClick={() => document.getElementById('testimonials')?.scrollIntoView({ behavior: 'smooth' })} className="hover:text-gray-300 transition-colors active:scale-95">Testimonials</button>
+                        <button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} className="hover:text-gray-300 pr-10 transition-colors active:scale-95">Contact</button>
                     </div>
                 </nav>
 

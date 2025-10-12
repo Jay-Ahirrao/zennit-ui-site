@@ -46,8 +46,9 @@ const Testimonials = () => {
             Trusted by industry leaders, CEO's and CTO's for their organisations Security
           </p>
         </div>
-        <div style={{ margin:"120px", height: '600px', position: 'relative' }}>
+        <div className="flex justify-center items-center" style={{ height: '600px', position: 'relative' }}>
           <ChromaGrid
+          className='mx-auto'
             items={items}
             radius={300}
             damping={0.45}
