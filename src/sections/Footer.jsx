@@ -59,7 +59,7 @@ const Footer = () => {
               </svg>
               <span>PHONE</span>
             </div>
-            <p>(+1) 800-SECURE</p>
+            <p>+91 8261803837</p>
           </div>
 
           {/* Email */}
@@ -73,7 +73,7 @@ const Footer = () => {
               </svg>
               <span>EMAIL</span>
             </div>
-            <p>contact@secureflash.com</p>
+            <p>jayahirrao11@gmail.com</p>
           </div>
 
           {/* Address */}
@@ -90,8 +90,8 @@ const Footer = () => {
               <span>ADDRESS</span>
             </div>
             <p>
-              Bhumkar Chowk, Tathwade <br />
-              Hinjewadi, SC 2948
+              Sentosa Complex Office <br />
+              @ Hinjewadi, SC 2948
             </p>
           </div>
 
@@ -115,7 +115,7 @@ const Footer = () => {
         {/* Footer Bottom */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 text-xs">
           <p>© SECUREFLASH - All rights reserved 2025</p>
-          <p>Made with ❤️ by Nexacrft</p>
+          <p>Made with ❤️ by <strong>Jay</strong></p>
         </div>
       </motion.div>
     </footer>
