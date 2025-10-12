@@ -8,7 +8,7 @@ export default {
   ],
   theme: {
    	fontFamily: {
-   		sans: ['Open Sans', 'sans-serif'],
+   		pangaia: ['PP Pangaia', 'sans-serif']
    	},
    	extend: {
   		colors: {
@@ -60,6 +60,10 @@ export default {
   		},
   		fontFamily: {
   			'open-sans': ['Open Sans', 'sans-serif'],
+  		},
+  		animation: {
+  			'fadein': 'fadein 1s ease-in-out forwards',
+  			'shake': 'shake 0.5s ease-in-out',
   		}
   	}
   },

@@ -1,37 +1,48 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#101b36] text-white px-6 py-12 md:px-20 rounded-t-3xl">
-      <div className="max-w-screen-xl mx-auto">
+    <footer className="bg-gradient-to-r from-black via-white/3 to-black text-white px-6 py-12 md:px-20  pb-8 relative overflow-hidden shadow-2xl">
+      <div className="absolute inset-0 bg-[conic-gradient(from_0deg,transparent,white,transparent)] animate-spin opacity-5"></div>
+      <motion.div
+        className="max-w-screen-xl mx-auto relative z-10"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: false }}
+      >
         {/* Top Section */}
         <div className="flex flex-col lg:flex-row justify-between gap-10 mb-10">
           {/* Logo & CTA */}
           <div className="max-w-xl">
-            <h1 className="text-5xl sm:text-6xl font-semibold brico text-[#e86294]">
-              SaySocial
+            <h1 className="text-5xl sm:text-6xl font-semibold brico text-[#ffad0a]" style={{ fontFamily: "'PP Pangaia', sans-serif" }}>
+              SECURE.FLASH 
             </h1>
+            <h2 className="text-5xl sm:text-6xl font-semibold brico text-[#ffad0a]" style={{ fontFamily: "'PP Pangaia', sans-serif" }}>
+              solutions
+            </h2>
             <p className="mt-6 text-base sm:text-lg leading-relaxed text-gray-300">
-              The next big thing starts here— <br />
-              drop us a line and let’s get creating!
+              Illuminating the path to digital security— <br />
+              flash your way to unbreakable protection!
             </p>
           </div>
 
           {/* Navigation Links */}
           <div className="grid grid-cols-2 gap-10 text-sm">
             <div className="space-y-3">
-              <p className="hover:text-[#e86294] cursor-pointer">Home</p>
-              <p className="hover:text-[#e86294] cursor-pointer">Benefits</p>
-              <p className="hover:text-[#e86294] cursor-pointer">Portfolio</p>
-              <p className="hover:text-[#e86294] cursor-pointer">Reviews</p>
-              <p className="hover:text-[#e86294] cursor-pointer">About</p>
+              <p className="hover:text-[#ffcf8b] cursor-pointer">Home</p>
+              <p className="hover:text-[#f2a02e] cursor-pointer">Services</p>
+              <p className="hover:text-[#f2a02e] cursor-pointer">About</p>
+              <p className="hover:text-[#f2a02e] cursor-pointer">Blog</p>
+              <p className="hover:text-[#f2a02e] cursor-pointer">Contact</p>
             </div>
             <div className="space-y-3">
-              <p className="hover:text-[#e86294] cursor-pointer">LinkedIn</p>
-              <p className="hover:text-[#e86294] cursor-pointer">Facebook</p>
-              <p className="hover:text-[#e86294] cursor-pointer">Twitter</p>
-              <p className="hover:text-[#e86294] cursor-pointer">Instagram</p>
-              <p className="hover:text-[#e86294] cursor-pointer">YouTube</p>
+              <p className="hover:text-[#ffcc86] cursor-pointer">LinkedIn</p>
+              <p className="hover:text-[#f2a02e] cursor-pointer">Twitter</p>
+              <p className="hover:text-[#f2a02e] cursor-pointer">GitHub</p>
+              <p className="hover:text-[#f2a02e] cursor-pointer">YouTube</p>
+              <p className="hover:text-[#f2a02e] cursor-pointer">Newsletter</p>
             </div>
           </div>
         </div>
@@ -48,7 +59,7 @@ const Footer = () => {
               </svg>
               <span>PHONE</span>
             </div>
-            <p>(+91) 8237006990</p>
+            <p>(+1) 800-SECURE</p>
           </div>
 
           {/* Email */}
@@ -62,7 +73,7 @@ const Footer = () => {
               </svg>
               <span>EMAIL</span>
             </div>
-            <p>saysocial@email.com</p>
+            <p>contact@secureflash.com</p>
           </div>
 
           {/* Address */}
@@ -79,8 +90,8 @@ const Footer = () => {
               <span>ADDRESS</span>
             </div>
             <p>
-              123 Main Street, Suite 200, <br />
-              Austin, TX 78701
+              Bhumkar Chowk, Tathwade <br />
+              Hinjewadi, SC 2948
             </p>
           </div>
 
@@ -95,8 +106,7 @@ const Footer = () => {
               </svg>
               <span>OPENING HOURS</span>
             </div>
-            <p>Mon to Sat: 9.00am - 8.30pm</p>
-            <p>Sun: Closed</p>
+            <p>24/7 Support</p>
           </div>
         </div>
 
@@ -104,12 +114,13 @@ const Footer = () => {
 
         {/* Footer Bottom */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 text-xs">
-          <p>© Say Social - All rights reserved 2025</p>
+          <p>© SECUREFLASH - All rights reserved 2025</p>
           <p>Made with ❤️ by Nexacrft</p>
         </div>
-      </div>
+      </motion.div>
     </footer>
   );
 };
 
 export default Footer;
+

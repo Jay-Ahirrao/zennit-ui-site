@@ -1,5 +1,9 @@
 import React, { useState, useRef, useEffect } from "react";
+// eslint-disable-next-line no-unused-vars
+import { motion } from "framer-motion";
+import ScrollFloat from './ScrollFloat';
 import ShinyText from './ShinyText';
+
 
 // ---------------- FAQ Item ----------------
 const FAQItem = ({ question, answer, icon }) => {
@@ -16,11 +20,11 @@ const FAQItem = ({ question, answer, icon }) => {
   }, [isOpen]);
 
   return (
-    <div className="rounded-xl border border-yellow-400/30 bg-gradient-to-r from-gray-800/50 to-gray-900/50 backdrop-blur-sm shadow-md hover:shadow-yellow-400/10 transition-all duration-300 w-full">
+    <div className="rounded-xl border border-white/20 bg-gradient-to-r from-white/15 via-white/10 to-black backdrop-blur-lg shadow-md hover:shadow-white/10 transition-all duration-300 w-full">
       <button
         className={`flex w-full items-center justify-between p-4 text-left transition-all duration-300 ${isOpen
-          ? "bg-gradient-to-r from-yellow-400/20 to-orange-400/20 text-white"
-          : "bg-gray-800/50 hover:bg-gray-700/50 text-gray-200 hover:text-white"
+          ? "bg-yellow-400/20 text-white"
+          : "  text-gray-200 hover:text-white"
           }`}
         onClick={() => setIsOpen(!isOpen)}
       >
@@ -43,7 +47,7 @@ const FAQItem = ({ question, answer, icon }) => {
           height: height,
           transition: "height 300ms ease",
         }}
-        className="overflow-hidden bg-gradient-to-r from-gray-900/30 to-black/30"
+        className="overflow-hidden rounded-b-xl"
       >
         <div className="text-gray-300 p-4 leading-relaxed text-sm overflow-hidden">{answer}</div>
       </div>
@@ -52,7 +56,7 @@ const FAQItem = ({ question, answer, icon }) => {
 };
 
 // ---------------- Icons (inline SVGs) ----------------
-const BookIcon = (
+const ShieldIcon = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     className="w-5 h-5"
@@ -61,12 +65,11 @@ const BookIcon = (
     stroke="currentColor"
     strokeWidth={2}
   >
-    <path d="M4 19.5A2.5 2.5 0 016.5 17H20" />
-    <path d="M4 4.5A2.5 2.5 0 016.5 7H20v13H6.5A2.5 2.5 0 014 17.5v-13z" />
+    <path d="M12 2l8 3v7c0 5.55-3.84 10.74-9 12-5.16-1.26-9-6.45-9-12V5l8-3z" />
   </svg>
 );
 
-const BrickWallIcon = (
+const LockIcon = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     className="w-5 h-5"
@@ -75,14 +78,13 @@ const BrickWallIcon = (
     stroke="currentColor"
     strokeWidth={2}
   >
-    <rect x="3" y="3" width="18" height="6" rx="1" />
-    <rect x="3" y="9" width="9" height="6" rx="1" />
-    <rect x="12" y="9" width="9" height="6" rx="1" />
-    <rect x="3" y="15" width="18" height="6" rx="1" />
+    <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+    <circle cx="12" cy="16" r="1" />
+    <path d="M7 11V7a5 5 0 0110 0v4" />
   </svg>
 );
 
-const TruckIcon = (
+const EyeIcon = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     className="w-5 h-5"
@@ -91,14 +93,12 @@ const TruckIcon = (
     stroke="currentColor"
     strokeWidth={2}
   >
-    <path d="M3 7h13v10H3z" />
-    <path d="M16 7h5l1 5v5h-6z" />
-    <circle cx="7.5" cy="17.5" r="1.5" />
-    <circle cx="17.5" cy="17.5" r="1.5" />
+    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+    <circle cx="12" cy="12" r="3" />
   </svg>
 );
 
-const ChildIcon = (
+const AlertIcon = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     className="w-5 h-5"
@@ -107,8 +107,7 @@ const ChildIcon = (
     stroke="currentColor"
     strokeWidth={2}
   >
-    <circle cx="12" cy="7" r="4" />
-    <path d="M5 21v-2a7 7 0 0114 0v2" />
+    <path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z" />
   </svg>
 );
 
@@ -116,52 +115,56 @@ const ChildIcon = (
 const FAQSection = () => {
   const faqs = [
     {
-      question: "Is this suitable for my child's age group?",
+      question: "What is cybersecurity?",
       answer:
-        "Absolutely! This book is meant for every child to easily pick up and learn from. The information given in this book is easy for kids to understand and colourful visuals to pair with it!",
-      icon: BookIcon,
+        "Cybersecurity is the practice of protecting systems, networks, and programs from digital attacks. These attacks are usually aimed at accessing, changing, or destroying sensitive information, extorting money from users, or interrupting normal business processes.",
+      icon: ShieldIcon,
     },
     {
-      question: "Where does the money go?",
+      question: "How can I protect my business from cyber threats?",
       answer:
-        "All of the money we earn with the sale of these books goes to the ManRay Foundation, an NGO dedicated to providing knowledge and learning to underprivileged children from under-resourced backgrounds.",
-      icon: BrickWallIcon,
+        "Implement strong passwords, use multi-factor authentication, keep software updated, train employees on security best practices, and consider professional cybersecurity services for comprehensive protection.",
+      icon: LockIcon,
     },
     {
-      question: "When will I get my copy?",
+      question: "What services do you offer?",
       answer:
-        "We will dispatch your copy as soon as the order is placed. We promise a quick delivery service with our magazine so that your kid can get started with reading as soon as possible!",
-      icon: TruckIcon,
+        "We offer threat assessment, incident response, security audits, employee training programs, and ongoing monitoring to keep your organization secure against evolving cyber threats.",
+      icon: EyeIcon,
     },
     {
-      question: "Can my child be featured in the next issue?",
+      question: "What should I do if I suspect a cyber attack?",
       answer:
-        "Yes! We love featuring our young readers. Submit your child's artwork or story through our website for consideration in future issues.",
-      icon: ChildIcon,
+        "Immediately disconnect affected systems, report the incident to your IT team and authorities, preserve evidence, and contact professional cybersecurity experts for rapid response and damage mitigation.",
+      icon: AlertIcon,
     },
   ];
 
   return (
-    <section className="mx-auto max-w px-4 py-20 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-900 via-black to-gray-700 relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(255,215,0,0.1),transparent_50%)] bg-[radial-gradient(circle_at_80%_20%,rgba(255,69,0,0.1),transparent_50%)]"></div>
+    <section className="mx-auto max-w px-4 py-20 sm:px-6 lg:px-8 bg-black relative overflow-hidden">
 
-      <div className="flex flex-col lg:flex-row lg:space-x-12 relative z-10">
+      <motion.div
+        className="flex flex-col lg:flex-row lg:space-x-12 relative z-10"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: false }}
+      >
         {/* Left Column */}
         <div className="mb-8 lg:mb-0 lg:w-1/3 flex flex-col justify-center">
-          <h1 className="text-5xl font-bold bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 bg-clip-text text-transparent mb-6">
-
-            <ShinyText
-              text="FAQs"
-              disabled={false}
-              speed={4}
-              className='custom-class'
-            />
+          <h1 className="text-5xl font-bold text-white mb-6" style={{ fontFamily: "'PP Pangaia', sans-serif" }}>
+            FAQ's
           </h1>
           <p className="text-lg text-gray-300 leading-relaxed">
             Get to know all the questions that users have for us. If you can't
             find your question here, feel free to contact us directly!
           </p>
+          <button className="px-6 py-3 text-white font-semibold rounded-full hover:shadow transition-colors duration-200 border border-white mt-20 w-full flex items-center justify-center gap-2 group">
+            <svg className="w-5 h-5 group-hover:animate-shake" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            </svg>
+            <ShinyText text="Contact Us" disabled={false} speed={4} />
+          </button>
         </div>
 
         {/* Right Column */}
@@ -175,7 +178,7 @@ const FAQSection = () => {
             />
           ))}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };
