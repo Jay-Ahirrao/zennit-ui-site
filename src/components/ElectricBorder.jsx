@@ -21,7 +21,7 @@ const ElectricBorder = ({
     >
       {/* 1. The Continuous Spinning Background */}
       <div
-        className="absolute inset-0 w-[300%] h-[300%] top-[-100%] left-[-100%] pointer-events-none"
+        className=" lg:p-20 md:p-15 sm:p-10 absolute inset-0 w-[300%] h-[300%] top-[-100%] left-[-100%] pointer-events-none"
         style={{
           // This gradient has no "transparent" gaps, making the border solid
           background: `conic-gradient(
