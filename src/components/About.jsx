@@ -43,7 +43,7 @@ function About() {
                         viewport={{ once: false }}
                     >
                         <h2 className="text-5xl font-extrabold bg-gradient-to-r from-purple-400 via-red-500 to-orange-500 bg-clip-text text-transparent mb-6" style={{ fontFamily: "'PP Pangaia', sans-serif" }}>
-                            Our Capabilities
+                            Our Capabilitie s
                         </h2>
                         <div className="mt-4 text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
                             <DecryptedText
