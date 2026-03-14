@@ -2,15 +2,14 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ShinyText from './ShinyText';
 
-const FAQItem = ({ question, answer, icon }) => {
+const FAQSection = ({ question, answer, icon }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div className="rounded-xl border border-white/10 bg-[#0a0a0a] shadow-md transition-all duration-300 w-full overflow-hidden">
       <button
-        className={`flex w-full items-center justify-between p-5 text-left transition-colors ${
-          isOpen ? "bg-white/5 text-yellow-400" : "text-gray-200 hover:bg-white/5"
-        }`}
+        className={`flex w-full items-center justify-between p-5 text-left transition-colors ${isOpen ? "bg-white/5 text-yellow-400" : "text-gray-200 hover:bg-white/5"
+          }`}
         onClick={() => setIsOpen(!isOpen)}
       >
         <div className="flex items-center gap-4">
