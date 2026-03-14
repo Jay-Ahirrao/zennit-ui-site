@@ -46,3 +46,6 @@ const FAQItem = ({ question, answer, icon }) => {
     </div>
   );
 };
+
+
+export default FAQSection; 
