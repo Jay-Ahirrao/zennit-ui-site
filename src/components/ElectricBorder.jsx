@@ -3,36 +3,47 @@ import React from 'react';
 const ElectricBorder = ({ 
   children, 
   color = '#5227FF', 
-  speed = 3, 
+  speed = 4, 
   thickness = 2, 
   className = '', 
   style = {} 
 }) => {
-  const borderRadius = style?.borderRadius ?? '12px';
+  const borderRadius = style?.borderRadius ? `${style.borderRadius}px` : '16px';
 
   return (
     <div 
-      className={`relative p-[${thickness}px] overflow-hidden ${className}`} 
+      className={`relative overflow-hidden ${className}`} 
       style={{ 
         ...style, 
         borderRadius,
-        padding: thickness // Ensure space for the border
+        padding: thickness, // This creates the border "gap"
       }}
     >
-      {/* The Animated Gradient Background */}
+      {/* 1. The Continuous Spinning Background */}
       <div
-        className="absolute inset-0 w-[200%] h-[200%] top-[-50%] left-[-50%] pointer-events-none"
+        className="absolute inset-0 w-[300%] h-[300%] top-[-100%] left-[-100%] pointer-events-none"
         style={{
-          background: `conic-gradient(from 0deg, transparent, ${color}, transparent 25%, transparent 50%, ${color}, transparent 75%)`,
+          // This gradient has no "transparent" gaps, making the border solid
+          background: `conic-gradient(
+            from 0deg, 
+            ${color} 0%, 
+            #ff073a 25%, 
+            ${color} 50%, 
+            #ff073a 75%, 
+            ${color} 100%
+          )`,
           animation: `spin ${speed}s linear infinite`,
-          borderRadius: '50%', // Round for smooth spinning
         }}
       />
 
-      {/* The "Inner" Content Mask */}
+      {/* 2. The Inner Content Mask */}
       <div 
-        className="relative bg-black h-full w-full" 
-        style={{ borderRadius: `calc(${borderRadius} - ${thickness}px)` }}
+        className="relative bg-[#0a0a0a] h-full w-full flex flex-col" 
+        style={{ 
+          borderRadius: `calc(${borderRadius} - ${thickness}px)`,
+          // If you want padding INSIDE the card, add it here:
+          padding: '2rem' 
+        }}
       >
         {children}
       </div>
