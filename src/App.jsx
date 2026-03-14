@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import LandingPageTemp from './components/LandingPageTemp'
 import AboutSection from './sections/AboutSection'
 import Testimonials from './sections/Testimonials'
-import ContactSection from './components/FAQSection'
+import FAQSection from './components/FAQSection'
 import Footer from './sections/Footer'
 
 function App() {
@@ -33,7 +33,7 @@ function App() {
         <AboutSection />
       </div>
       <div id="faqs">
-        <ContactSection />
+        <FAQSection />
       </div>
       <div id="testimonials">
         <Testimonials />
